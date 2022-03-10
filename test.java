@@ -30,7 +30,7 @@ public class test {
            if (i >= 1) {
               REGEX = "(.*)(human response: "+word+")(.*)?";
               matcher = Pattern.matches(REGEX.toUpperCase(), data.toUpperCase());
-              if (matcher) {
+              if (matcher) {  
                 System.out.println(data);
               }
            }
