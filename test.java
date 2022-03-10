@@ -7,7 +7,7 @@ public class test {
    //hdhd
     public static void main(String[] args) {
       Scanner sc = new Scanner(System.in);
-      // hello
+      // hello hello
       try {
         File myObj = new File("filename.txt");
         Scanner myReader = new Scanner(myObj);
