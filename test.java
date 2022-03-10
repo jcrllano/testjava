@@ -32,6 +32,7 @@ public class test {
               matcher = Pattern.matches(REGEX.toUpperCase(), data.toUpperCase());
               if (matcher) {
                 System.out.println(data);
+                System.out.println(matcher);
               }
            }
            else {
