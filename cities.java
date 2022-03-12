@@ -3,6 +3,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+import java.io.FileWriter;   // Import the FileWriter class
+import java.io.IOException; 
 
 public class cities {
     public static void main(String args[]) {
@@ -27,7 +29,19 @@ public class cities {
         String newcity = sc.nextLine();
         list2.add(i,newcity);
     }
+    Object[] objects = list2.toArray();
 
-    System.out.println(list2);
+    try {
+        FileWriter myWriter = new FileWriter("testcityfile.txt");
+        for (Object obj : objects) {
+         String message =  String.valueOf(obj);   
+         myWriter.write(message);
+        }
+        myWriter.close();
+        System.out.println("Successfully wrote to the file.");
+      } catch (IOException e) {
+        System.out.println("An error occurred.");
+        e.printStackTrace();
+      }
     }
 }
