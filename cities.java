@@ -43,8 +43,7 @@ public class cities {
         FileWriter myWriter = new FileWriter("testcityfile.txt");
         for (Object obj : objects) {
          String message =  String.valueOf(obj);   
-         myWriter.write(message);
-         myWriter.nullWriter();
+         myWriter.write(message + "\n");
         }
         myWriter.close();
         System.out.println("Successfully wrote to the file.");
