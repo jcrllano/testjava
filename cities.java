@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.io.FileWriter;   // Import the FileWriter class
 import java.io.IOException; 
+import java.io.File;
 
 public class cities {
     public static void main(String args[]) {
@@ -32,10 +33,18 @@ public class cities {
     Object[] objects = list2.toArray();
 
     try {
+        File myObj = new File("testcityfile.txt");
+        if (myObj.delete()) { 
+            System.out.println("Deleted the file: " + myObj.getName());
+          } else {
+            System.out.println("Failed to delete the file.");
+          } 
+
         FileWriter myWriter = new FileWriter("testcityfile.txt");
         for (Object obj : objects) {
          String message =  String.valueOf(obj);   
          myWriter.write(message);
+         myWriter.nullWriter();
         }
         myWriter.close();
         System.out.println("Successfully wrote to the file.");
