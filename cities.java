@@ -46,7 +46,16 @@ public class cities {
          myWriter.write(message + "\n");
         }
         myWriter.close();
-        System.out.println("Successfully wrote to the file.");
+        System.out.println("Successfully Wrote To The File ");
+
+        File readTextFile = new File("testcityfile.txt");
+        Scanner myReader = new Scanner(readTextFile);
+        while (myReader.hasNextLine()) {
+          String outPutData = myReader.nextLine();
+           System.out.println(outPutData);
+        }
+        myReader.close();
+        
       } catch (IOException e) {
         System.out.println("An error occurred.");
         e.printStackTrace();
